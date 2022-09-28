@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="---AQUI A DESCRIÇÃO DO SITE---">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Titulo</title>
+  </head>
+  <body>
+    <section class="container">
+        <div class="title text-center mt-5 mb-5 d-grid justify-content-center">
+            <span class="sub_title">Projeto CRUD</span>
+            <h1>Cadastro de Pessoas</h1>
+        </div>
+        <div class="new_person">
+            <h3 class="mb-4 fs-2">Novo cadastro</h3>
+            <div class="group_inputs">
+
+                <div class="sub_group_input mb-2 d-flex gap-2">
+                    <label for="name" class="">Nome</label>
+                    <input type="text" id="name" data-get-name="name">
+                </div>
+
+                <div class="sub_group_input mb-2 d-flex gap-2">
+                    <label for="email" class="">Email</label>
+                    <input type="email" id="email" data-get-email="email">
+                </div>
+
+                <div class="sub_group_input mb-2 d-flex gap-2">
+                    <label for="phone" class="">Telefone</label>
+                    <input type="tel" id="phone" data-get-phone="phone">
+                </div>
+
+                <div class="sub_group_input mb-2 d-flex gap-2">
+                    <label for="birth" class="">Data de nascimento</label>
+                    <input type="date" id="birth" data-get-birth="birth">
+                </div>
+
+                <button class="btn btn-dark d-block mt-4" data-btn="btn" onclick="registered.adicionar()">
+                    Cadastrar
+                </button>
+            </div>
+        </div>
+        <table class="people">
+            <thead class="header fs-4">
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                    <th>Nascimento</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody class="registered" data-registered="registered">
+                
+            </tbody>
+        </table>
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

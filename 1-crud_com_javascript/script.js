@@ -15,14 +15,11 @@ class Cadastro {
   delete(event){
     event.preventDefault();
     const lines = document.querySelectorAll('[data-people]');
-    const linesRegistered = document.querySelector('[data-registered]')
     lines.forEach((line)=>{
-      // console.log(event.target.dataset['delete'])
-      if(line.dataset['people'] == this.dataset['delete']){
-        let i = line.dataset['people'];
-        console.log(registered.registeresPeople.splice(i, 1))
-        registered.registeresPeople.splice(i, 1);
-        linesRegistered.deleteRow(i);
+      let i = line.dataset['people'];
+      if( i == this.dataset['delete'] ){
+        registered.registeresPeople.splice( i, 1 );
+        line.remove();
       }
     });
   }
@@ -47,7 +44,7 @@ class Cadastro {
       let birth = this.registeresPeople[i].birth;
       const newTr = document.createElement('tr');
       newTr.dataset.people = `${i}`;
-      registered.insertAdjacentElement("afterbegin", newTr);
+      registered.insertAdjacentElement("beforeend", newTr);
       const tr = document.querySelector(`[data-people="${i}"]`);
       tr.insertAdjacentHTML("afterbegin", `
         <td>${name}</td>
@@ -72,12 +69,12 @@ class Cadastro {
   }
   addPeople(people){
     this.registeresPeople.push(people);
-    this.addIds();
+    this.addId();
   }
-  addIds(){
+  addId(){
     let id = 0;
-    for(let person of this.registeresPeople){
-      person.id = id;
+    for(let people of this.registeresPeople){
+      people.id = id;
       id++
     }
   }
@@ -104,10 +101,10 @@ class Cadastro {
   readData(){
     const people = {};
     people.id = '';
-    people.name = document.querySelector('[data-get-name]').value;
-    people.email = document.querySelector('[data-get-email]').value;
-    people.phone = document.querySelector('[data-get-phone]').value;
-    people.birth = document.querySelector('[data-get-birth]').value;
+    people.name = document.querySelector('[data-name]').value;
+    people.email = document.querySelector('[data-email]').value;
+    people.phone = document.querySelector('[data-phone]').value;
+    people.birth = document.querySelector('[data-birth]').value;
     return people;
   }
 }

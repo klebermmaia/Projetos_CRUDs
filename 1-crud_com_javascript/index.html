@@ -22,30 +22,30 @@
 
                 <div class="sub_group_input mb-2 d-flex gap-2">
                     <label for="name" class="">Nome</label>
-                    <input type="text" id="name" data-get-name="name">
+                    <input type="text" id="name" data-name="name">
                 </div>
 
                 <div class="sub_group_input mb-2 d-flex gap-2">
                     <label for="email" class="">Email</label>
-                    <input type="email" id="email" data-get-email="email">
+                    <input type="email" id="email" data-email="email">
                 </div>
 
                 <div class="sub_group_input mb-2 d-flex gap-2">
                     <label for="phone" class="">Telefone</label>
-                    <input type="tel" id="phone" data-get-phone="phone">
+                    <input type="tel" id="phone" data-phone="phone">
                 </div>
 
                 <div class="sub_group_input mb-2 d-flex gap-2">
                     <label for="birth" class="">Data de nascimento</label>
-                    <input type="date" id="birth" data-get-birth="birth">
+                    <input type="date" id="birth" data-birth="birth">
                 </div>
 
-                <button class="btn btn-dark d-block mt-4" data-btn="btn" onclick="registered.adicionar()">
+                <button class="btn btn-dark d-block mt-4 mb-4" data-btn="btn add" onclick="registered.adicionar()">
                     Cadastrar
                 </button>
             </div>
         </div>
-        <table class="people">
+        <table class="people mb-5">
             <thead class="header fs-4">
                 <tr>
                     <th>Nome</th>
@@ -60,7 +60,34 @@
             </tbody>
         </table>
     </section>
-    
+    <div class="editor" data-editor>
+        <div class="modal-edit">
+
+            <div class="sub_group_input mb-2 d-flex gap-2">
+                <label for="name" class="">Nome</label>
+                <input type="text" id="name" data-name="name">
+            </div>
+
+            <div class="sub_group_input mb-2 d-flex gap-2">
+                <label for="email" class="">Email</label>
+                <input type="email" id="email" data-email="email">
+            </div>
+
+            <div class="sub_group_input mb-2 d-flex gap-2">
+                <label for="phone" class="">Telefone</label>
+                <input type="tel" id="phone" data-phone="phone">
+            </div>
+
+            <div class="sub_group_input mb-2 d-flex gap-2">
+                <label for="birth" class="">Data de nascimento</label>
+                <input type="date" id="birth" data-birth="birth">
+            </div>
+
+            <button class="btn btn-dark d-block mt-4 mb-4" data-btn="btn edit" onclick="registered.editar()">
+                Cadastrar
+            </button>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="script.js"></script>
   </body>
